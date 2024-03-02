@@ -11,17 +11,17 @@
 #### npm
 
 ```sh
-$ npm install --save suneditor suneditor-react # make sure to install suneditor yourself
+$ npm install --save suneditor suneditor-react-fixed # make sure to install suneditor yourself
 ```
 
 ## Getting Started
 
 ```javascript
-import React from 'react';
-import SunEditor from 'suneditor-react';
-import 'suneditor/dist/css/suneditor.min.css'; // Import Sun Editor's CSS File
+import React from "react";
+import SunEditor from "suneditor-react-fixed";
+import "suneditor-fixed/dist/css/suneditor.min.css"; // Import suneditor-fixed's CSS File
 
-const MyComponent = props => {
+const MyComponent = (props) => {
   return (
     <div>
       <p> My Other Contents </p>
@@ -32,21 +32,20 @@ const MyComponent = props => {
 export default MyComponent;
 ```
 
+### [Next.js](https://nextjs.org/)
 
-###  [Next.js](https://nextjs.org/)
-
-To use suneditor-react with Next.js, please use the dynamic import syntax like below:
+To use suneditor-react-fixed with Next.js, please use the dynamic import syntax like below:
 
 ```javascript
-import React from 'react';
+import React from "react";
 import dynamic from "next/dynamic";
-import 'suneditor/dist/css/suneditor.min.css'; // Import Sun Editor's CSS File
+import "suneditor/dist/css/suneditor.min.css"; // Import Sun Editor's CSS File
 
-const SunEditor = dynamic(() => import("suneditor-react"), {
+const SunEditor = dynamic(() => import("suneditor-react-fixed"), {
   ssr: false,
 });
 
-const MyComponent = props => {
+const MyComponent = (props) => {
   return (
     <div>
       <p> My Other Contents </p>
@@ -67,55 +66,53 @@ export default MyComponent;
 // Javascript Version
 
 import React, { useRef, useEffect } from "react";
-import SunEditor from 'suneditor-react';
-import 'suneditor/dist/css/suneditor.min.css'; // Import Sun Editor's CSS File
+import SunEditor from "suneditor-react";
+import "suneditor/dist/css/suneditor.min.css"; // Import Sun Editor's CSS File
 
-const MyComponent = props => {
-    /**
+const MyComponent = (props) => {
+  /**
    * @type {React.MutableRefObject<SunEditor>} get type definitions for editor
    */
-    const editor = useRef();
+  const editor = useRef();
 
-    // The sunEditor parameter will be set to the core suneditor instance when this function is called
-    const getSunEditorInstance = (sunEditor) => {
-        editor.current = sunEditor;
-    };
+  // The sunEditor parameter will be set to the core suneditor instance when this function is called
+  const getSunEditorInstance = (sunEditor) => {
+    editor.current = sunEditor;
+  };
 
-    return (
-        <div>
-            <p> My Other Contents </p>
-            <SunEditor getSunEditorInstance={getSunEditorInstance} />
-        </div>
-    );
+  return (
+    <div>
+      <p> My Other Contents </p>
+      <SunEditor getSunEditorInstance={getSunEditorInstance} />
+    </div>
+  );
 };
 export default MyComponent;
-
 ```
 
 ```tsx
 // Typescript Version
 
 import React, { useRef, useEffect } from "react";
-import SunEditor from 'suneditor-react';
-import SunEditorCore from "suneditor/src/lib/core";
-import 'suneditor/dist/css/suneditor.min.css'; // Import Sun Editor's CSS File
+import SunEditor from "suneditor-react-fixed";
+import SunEditorCore from "suneditor-fixed/src/lib/core";
+import "suneditor-fixed/dist/css/suneditor.min.css"; // Import Sun Editor's CSS File
 
-const MyComponent = props => {
-    const editor = useRef<SunEditorCore>();
+const MyComponent = (props) => {
+  const editor = useRef<SunEditorCore>();
 
-    // The sunEditor parameter will be set to the core suneditor instance when this function is called
-     const getSunEditorInstance = (sunEditor: SunEditorCore) => {
-        editor.current = sunEditor;
-    };
-    return (
-        <div>
-            <p> My Other Contents </p>
-            <SunEditor getSunEditorInstance={getSunEditorInstance} />
-        </div>
-    );
+  // The sunEditor parameter will be set to the core suneditor instance when this function is called
+  const getSunEditorInstance = (sunEditor: SunEditorCore) => {
+    editor.current = sunEditor;
+  };
+  return (
+    <div>
+      <p> My Other Contents </p>
+      <SunEditor getSunEditorInstance={getSunEditorInstance} />
+    </div>
+  );
 };
 export default MyComponent;
-
 ```
 
 ## Basic Settings
@@ -134,13 +131,11 @@ render() {
 }
 ```
 
-
 **name**
 
 **_HTML form name of editor_**
 
 This is used to set the HTML form name of the editor. This means on HTML form submission, it will be submitted together with contents of the editor by the name provided.
-
 
 ```javascript
 //...
@@ -190,7 +185,6 @@ render() {
 }
 ```
 
-
 **placeholder**
 
 **_Set Editor's placeholder_**
@@ -201,7 +195,6 @@ render() {
 	return <SunEditor placeholder="Please type here..." />
 }
 ```
-
 
 **autoFocus**
 
@@ -258,9 +251,8 @@ render() {
 
 **_Set Editor's Content_**
 
-**Note:** To set the initial contents of the editor without calling the ``onChange`` event please use the ``defaultValue`` prop.
-``setContents`` is used to set the contents of the editor programmatically. You must be aware that, when the `setContents`'s  prop changes, the `onChange` event is triggered.
-
+**Note:** To set the initial contents of the editor without calling the `onChange` event please use the `defaultValue` prop.
+`setContents` is used to set the contents of the editor programmatically. You must be aware that, when the `setContents`'s prop changes, the `onChange` event is triggered.
 
 ```javascript
 //...
@@ -279,7 +271,6 @@ render() {
 	return <SunEditor appendContents="My contents" />
 }
 ```
-
 
 **setDefaultStyle**
 
@@ -330,6 +321,7 @@ render() {
 	return <SunEditor hideToolbar={true} />
 }
 ```
+
 **disableToolbar**
 
 **_Disable Editor Toolbar_**
@@ -394,7 +386,6 @@ render() {
 }
 ```
 
-
 **onMouseDown**
 
 **_Has the mouse is pressed and not yet released?_**
@@ -421,7 +412,6 @@ render() {
 }
 ```
 
-
 **onKeyUp**
 
 **_Has the key been released up in the editor?_**
@@ -436,7 +426,6 @@ render() {
 
 ```
 
-
 **onFocus**
 
 **_Has the editor been focused?_**
@@ -449,8 +438,6 @@ render() {
 	return <SunEditor onFocus={handleFocus} />
 }
 ```
-
-
 
 **onBlur**
 
@@ -467,7 +454,6 @@ render() {
 }
 ```
 
-
 **onLoad**
 
 **_Has the editor been reloaded with setOptions?_**
@@ -480,7 +466,6 @@ render() {
 	return <SunEditor onLoad={handleLoad} />
 }
 ```
-
 
 **onKeyDown**
 
@@ -508,7 +493,6 @@ render() {
 }
 ```
 
-
 **onImageUploadBefore**
 
 **_Before an image is uploaded into the editor_**
@@ -522,7 +506,6 @@ render() {
 	return <SunEditor onImageUploadBefore={handleImageUploadBefore} />
 }
 ```
-
 
 **onImageUpload**
 
@@ -550,7 +533,6 @@ render() {
 }
 ```
 
-
 **onVideoUploadBefore**
 
 **_Before a video is uploaded to the editor_**
@@ -564,7 +546,6 @@ render() {
 	return <SunEditor onVideoUploadBefore={handleVideoUploadBefore} />
 }
 ```
-
 
 **onVideoUpload**
 
@@ -592,7 +573,6 @@ render() {
 }
 ```
 
-
 **onAudioUploadBefore**
 
 **_Before an audio is uploaded to the editor_**
@@ -606,7 +586,6 @@ render() {
 	return <SunEditor onAudioUploadBefore={handleAudioUploadBefore} />
 }
 ```
-
 
 **onAudioUpload**
 
@@ -634,7 +613,6 @@ render() {
 }
 ```
 
-
 **onResizeEditor**
 
 **_Has the editor been resized?_**
@@ -648,7 +626,6 @@ render() {
 }
 ```
 
-
 **onCopy**
 
 **_Has something been copied from the suneditor?_**
@@ -661,7 +638,6 @@ render() {
 	return <SunEditor onCopy={handleCopy} />
 }
 ```
-
 
 **onCut**
 
@@ -689,7 +665,6 @@ render() {
 }
 ```
 
-
 **imageUploadHandler**
 
 **_Replaces the default callback function of the image upload_**
@@ -702,7 +677,6 @@ render() {
 	return <SunEditor imageUploadHandler={imageUploadHandler} />
 }
 ```
-
 
 **toggleCodeView**
 
