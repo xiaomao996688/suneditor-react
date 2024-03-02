@@ -1,5 +1,5 @@
 {
-  "name": "suneditor-react",
+  "name": "suneditor-react-fixed",
   "version": "3.6.1",
   "description": "A React Component for Suneditor",
   "repository": {
@@ -47,14 +47,14 @@
     "prettier": "^2.8.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "suneditor": "^2.44.10",
+    "suneditor-fixed": "^2.45.1",
     "ts-jest": "^29.0.5",
     "typescript": "^5.0.4"
   },
   "peerDependencies": {
     "react": ">= 16.8.0",
     "react-dom": ">= 16.8.0",
-    "suneditor": "^2.44.10"
+    "suneditor-fixed": "^2.45.1"
   },
   "browserslist": [
     ">0.2%",

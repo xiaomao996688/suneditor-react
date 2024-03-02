@@ -1,8 +1,8 @@
 import React, { FC, useEffect, useRef } from "react";
-import SunEditorCore from "suneditor/src/lib/core";
-import { SunEditorOptions } from "suneditor/src/options";
-import plugins from "suneditor/src/plugins";
-import suneditor from "suneditor";
+import SunEditorCore from "suneditor-fixed/src/lib/core";
+import { SunEditorOptions } from "suneditor-fixed/src/options";
+import plugins from "suneditor-fixed/src/plugins";
+import suneditor from "suneditor-fixed";
 import { SunEditorReactProps } from "../types/SunEditorReactProps";
 import getLanguage from "../lang/getLanguage";
 import { events, uploadBeforeEvents } from "../data/events";

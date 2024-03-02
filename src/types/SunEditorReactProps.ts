@@ -1,5 +1,5 @@
-import SunEditorCore from "suneditor/src/lib/core";
-import { SunEditorOptions } from "suneditor/src/options";
+import SunEditorCore from "suneditor-fixed/src/lib/core";
+import { SunEditorOptions } from "suneditor-fixed/src/options";
 import lang from "./lang";
 import { UploadBeforeHandler, UploadBeforeReturn, UploadInfo } from "./upload";
 
