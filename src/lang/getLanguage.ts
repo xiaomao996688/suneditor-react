@@ -5,7 +5,7 @@ const getLanguage = (lang?: Lang) => {
     case "object":
       return lang;
     case "string":
-      return require(`suneditor/src/lang/${lang}.js`);
+      return require(`suneditor-fixed/src/lang/${lang}.js`);
     default:
       return undefined;
   }
