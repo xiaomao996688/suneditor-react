@@ -6,6 +6,9 @@
     "type": "git",
     "url": "https://github.com/xiaomao996688/suneditor-react"
   },
+  "bugs": {
+    "url": "https://github.com/xiaomao996688/suneditor-react/issues"
+  },
   "main": "dist/index.js",
   "scripts": {
     "build": "rm -rf ./dist && tsc",
