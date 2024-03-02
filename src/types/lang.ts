@@ -1,4 +1,4 @@
-import { Lang as SourceLang } from "suneditor/src/lang/Lang";
+import { Lang as SourceLang } from "suneditor-fixed/src/lang/Lang";
 
 type Lang =
   | "en"
